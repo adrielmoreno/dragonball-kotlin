@@ -5,11 +5,24 @@ import android.os.Bundle
 import android.util.Log
 
 class MainActivity : AppCompatActivity() {
+
+    var initTime = 0L
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.login_constraint)
-        Log.v(MainActivity::class.java.name, "Prueba")
-        var hola = "hola"
-        println(hola)
+
+    }
+
+    override fun onStart() {
+        super.onStart()
+       initTime = System.currentTimeMillis()
+    }
+
+    override fun onStop() {
+        val endTime = System.currentTimeMillis()
+        val timeUsed = endTime - initTime
+
+        super.onStop()
+
     }
 }
