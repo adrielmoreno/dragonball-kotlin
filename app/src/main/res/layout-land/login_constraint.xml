@@ -20,14 +20,15 @@
         android:id="@+id/etName"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:hint="@string/insert_your_name"
-        android:layout_marginTop="@dimen/margin_big"
         android:layout_marginHorizontal="@dimen/margin_medium"
+        android:layout_marginTop="@dimen/margin_big"
+        android:ems="10"
+        android:hint="@string/insert_your_name"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
         app:layout_constraintEnd_toStartOf="@id/button"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintHorizontal_weight="3"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
 
     <EditText
@@ -39,6 +40,7 @@
         android:ems="10"
         android:hint="@string/insert_your_password"
         android:inputType="textPassword"
+        android:minHeight="48dp"
         app:layout_constraintEnd_toStartOf="@+id/button"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etName" />
