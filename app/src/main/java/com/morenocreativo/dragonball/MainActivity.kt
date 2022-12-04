@@ -8,6 +8,9 @@ import android.util.Log
 class MainActivity : AppCompatActivity() {
 
     var initTime = 0L
+    companion object {
+        const val TAG_TIME = "TAG_TIME"
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.login_constraint)
@@ -24,9 +27,9 @@ class MainActivity : AppCompatActivity() {
         val timeUsed = endTime - initTime
 
         with(getPreferences(Context.MODE_PRIVATE)) {
-            val pastTime = getLong("Time", 0L)
+            val pastTime = getLong(TAG_TIME, 0L)
             val editablePreferences = edit()
-            editablePreferences.putLong("Tiempo", timeUsed + pastTime)
+            editablePreferences.putLong(TAG_TIME, timeUsed + pastTime)
             editablePreferences.apply()
         }
         super.onStop()
